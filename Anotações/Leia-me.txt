@@ -1,0 +1,74 @@
+Início de uma aplicação com nodeJS:
+
+- Instalar o nodeJS.
+- Criar um diretório para guardar seus arquivos.
+- Utilizando o terminal, navegue até a pasta e digite ( npm init )
+- Configure seu projeto.
+- Crie um arquivo index.js
+- Configure o servidor.
+
+Exemplo de configuração de servidor
+[
+
+	// Constante que solicita os serviçoes HTTP.
+	const httpd = require("http");
+
+	// Configuração do host e da porta do nodeJS.
+	const hostname = "127.0.0.1";
+	const port = "3000";
+
+	// Dando início ao servidor HTTP, com a tratativa de resposta da função createServer().
+	const server = http.createServer((req, res) => {
+		res.statusCode = 200;
+		res.setHeader('Content-type', 'text/plain');
+		res.end('Olá mundo!');
+	});
+
+	// Comando que envia todas as informações necessária para dar início ao seridro HTTP.
+	server.listen(port, hostname, (req, res) => {
+		console.log("Servidor Rodando!");
+	});
+
+]
+
+- Instalando express: npm install --save express
+OBS: Importante framework NodeJS que se integra muito bem com MYSQL.
+
+Exemplo de configuração do servidor utilizando express
+[
+	// Criando constantes do Express.
+	const express = require("express");
+	const app = express();
+	const path = require("path");
+	const router = express.Router();
+
+	// Caso o usuário esteja na rota padrão, na rota barra.
+	// Será renderizado o arquivo index.html.
+	router.get("/", function(req, res){
+		res.sendFile(path.join(__dirname + '/index.html') );
+	});
+
+	// Diz para a aplicação utilizar o '/' como uma rota válida.
+	app.use('/', router);
+
+	// Diz para o servidor iniciar e utilizar a porta padrão ou então a porta 3000.
+	app.listen(process.env.port || 3000, (req, res) => {
+		console.log("Positivo e operante!");
+	});
+]
+
+- Utilizar o comando ( node index.js ) para dar início ao nosso programa.
+- Instalar nodemon: npm install nodemon -g
+OBS: Utilizado para fazer a atualização dinâmica do projeto.
+
+- Instalar sequelize: npm install --save sequelize
+OBS Utilizado para fazer a conexão com a base de dados MYSQL utilizando o Express.
+
+- Configurar o NodeJS para utilizar o mysql: npm install --save mysql2
+OBS: Engine de banco de dados selecionada para o projeto.
+
+- Configurar o HandleBars: npm install --save express-handlebars
+OBS: FrameWork que adiciona novas funcionalidades ao HTML.
+
+- Configurar o body-parser: npm install --save body-parser
+OBS: Auxilia a tratar retornos de formulários dentro do Express.

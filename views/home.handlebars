@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="box">
+
+		<h1> Tela de busca dos dados da aplicação </h1>
+		<p> Apenas uma descrição da tela de busca </p>
+
+		<hr>
+
+		<table>
+			<tr>
+				<td>Nome: </td>
+				<td>Descrição: </td>
+				<td>Opções</td>
+			</tr>
+
+			<tbody>
+				{{#each dados_usuarios}}
+					<tr>
+						<td>{{us_nome}}</td>
+						<td>{{us_descricao}}</td>
+						<td><a href="/deletarUsuario/{{id}}"><button>Deletar Usuário</button></a></td>
+				{{/each}}
+				</tr>
+			</tbody>
+
+		</table>
+
+		<hr>
+
+		<a href="/"><button>Inserir Dados</button></a>
+	</div>
+</div>

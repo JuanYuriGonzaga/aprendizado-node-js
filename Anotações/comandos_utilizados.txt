@@ -1,0 +1,18 @@
+// Comandos:
+
+// then: Função de callback, executa quando algum evento acontece.
+// catch: Função que captura erros, executa quando algo de errado venha a acontecer.
+// define: Função que define uma tabela na base de dados. Param("nome_tabela", JSON-conlunas,tipo).
+// force: Força a criação da tabela dentro da base de dados.
+// create: Adiciona dados dentro da tabela de acordo com os parâmetros.
+// get: Utlizado para controle de URL/Rota e também de seus parâmetros.
+// sendFile: Utilizado para encaminhar um arquivo para a exibição.
+// send: Utilizado para renderizar uma mensagem de texto.
+// req: Utilizado para controle de REQUIZIÇÕES dentro da função.
+// res: Utilizado para controle de RESPOSTA dentro da função.
+// use: Utilizado para declarar que a rota é valida.
+// listen: Uitlizado para informar a porta do serviço http e iniciar o mesmo.
+// module.exports: Utilizado para exportar um arquivo para toda a aplicação.
+// findAll: Utilizado para buscar informações na base de dados.
+// destroy: Utilizado para eliminar informações na base de dados.
+// redirect: Utilizado para redirecionar a aplicação para uma nova URL.
