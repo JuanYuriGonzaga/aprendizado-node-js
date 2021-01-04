@@ -68,6 +68,32 @@ app.get("/deletarUsuario/:id", function(req, res){
 	});
 });
 
+app.get("/atualizaUsuarioView/:id", function(req, res){
+
+	Usuarios.findAll({where: {'id': req.params.id}}).then(function(dados){
+		console.log("Dados do usuário: " + dados);
+		res.render("atualiza", {dados_usuario: dados});
+	}).catch(function(erro){
+		console.log("Ocorreu um erro durante a busca do usuário na base de dados: " + erro);
+	});
+})
+
+app.post("/atualizarUsuario", function(req, res){
+	Usuarios.update(
+		{
+			'us_nome': req.body.nome_usuario, 
+			'us_descricao': req.body.descricao_usuario
+		}, 
+		{
+			where: {'id': req.body.id}
+		})
+	.then(function(){
+		res.redirect("home");
+	}).catch(function(erro){
+		console.log("Ocorreu um erro durante a atualização do usuario: " + erro);
+	});
+});
+
 app.listen(8080, function(req, res){
 	console.log("A operação foi um sucesso! Servidor rodando na URL: http://localhost:8080");
 });

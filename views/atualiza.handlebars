@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="box">
+		<form action="/atualizarUsuario" method="POST">
+
+			<h1> Tela de atualização de usuário da aplicação </h1>
+			<p> Apenas uma descrição da tela de atualização </p>
+
+			<hr>
+
+			{{#each dados_usuario}}
+
+				<label for="nome_usuario"> Nome: </label>
+				<input type="text" name="nome_usuario" id="nome_usuario" value="{{this.us_nome}}">
+
+				<br>
+				<br>
+
+				<label for="descricao_usuario"> Descricao: </label>
+				<input type="text" name="descricao_usuario" id="descricao_usuario" value="{{this.us_descricao}}">
+
+				<input type="hidden" name="id" id="id" value="{{this.id}}">
+
+			{{/each}}
+
+			<hr>
+
+			<button type="submit">Enviar</button>
+		</form>
+		<a href="/home"><button>Buscar Dados</button></a>
+	</div>
+</div>
